@@ -1,0 +1,221 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : postProcess -func samplePwall
+Date   : May 06 2020
+Time   : 10:42:39
+Host   : linux-5lyr
+PID    : 30054
+I/O    : uncollated
+Case   : /home/michael/suse42/michael/TESTCASES/OF1912/Naca0012send/fixed/angleAttacMaStudy/4degreeM0.725
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+surfaceFieldValue samplePwall:
+    operation     = none
+    surfaceFormat = raw
+
+
+Time = 0
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+surfaceFieldValue samplePwall write:
+    total faces   = 300
+    total area    = 0.20395338
+
+
+Time = 0.01
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.02
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.03
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.04
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.05
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.06
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.07
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.08
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.09
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.1
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.11
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.12
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.13
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.14
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.15
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.16
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.17
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.18
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.19
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.2
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.21
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+Time = 0.22
+
+Reading fields:
+    volScalarField: p yPlus
+    volVectorField: wallShearStress
+
+Executing functionObjects
+
+End
+

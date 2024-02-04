@@ -1,0 +1,32 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+
+pointSync false;
+
+patches
+(
+    {
+
+        // name of our new patch
+        name    lowerPatch;
+
+        // build our new patch from an existing one
+        constructFrom patches;
+
+        // name of our old patch
+        patches (VisualizationToolkitgeneratedSLAFile);
+
+        // set basic patch info
+        patchInfo
+        {
+            // patch type for our new patch
+            type wall;
+        }
+    }
+
+);
