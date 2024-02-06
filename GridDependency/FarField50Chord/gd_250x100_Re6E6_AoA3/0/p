@@ -1,0 +1,40 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+
+pOutlet 24500;
+
+dimensions [1 -1 -2 0 0 0 0];
+
+internalField uniform $pOutlet;
+
+boundaryField
+{
+    outlet
+    {
+        type waveTransmissive;
+        field p;
+        psi thermo:psi;
+        gamma 1.4;
+        fieldInf $pOutlet;
+        lInf 5;
+        value uniform $pOutlet;
+    }
+
+    freestream
+    {
+        type freestreamPressure;
+        freestreamValue uniform $pOutlet;
+    }
+
+    wall
+    {
+        type zeroGradient;
+    }
+
+    #includeEtc "caseDicts/setConstraintTypes"
+}

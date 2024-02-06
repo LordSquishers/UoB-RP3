@@ -1,0 +1,44 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+
+Tinlet 220;
+Tupper 220;
+Tlower 220;
+
+dimensions [0 0 0 1 0 0 0];
+
+internalField uniform $Tinlet;
+
+boundaryField
+{
+    freestream
+    {
+        type inletOutlet;
+        inletValue uniform $Tinlet;
+        value $inletValue;
+    }
+
+    upperSurface
+    {
+        type fixedValue;
+        value uniform $Tlower;
+    }
+
+    lowerSurface
+    {
+        type fixedValue;
+        value uniform $Tupper;
+    }
+
+    wall
+    {
+        type zeroGradient;
+    }
+
+    #includeEtc "caseDicts/setConstraintTypes"
+}

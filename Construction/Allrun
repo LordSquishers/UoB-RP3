@@ -1,0 +1,21 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # Tutorial run functions
+
+cd grid_dependence_200x100
+./Allrun 
+cd ..
+
+cd grid_dependence_400x200
+./Allrun 
+cd ..
+
+cd grid_dependence_800x400
+./Allrun 
+cd ..
+
+cd grid_dependence_1600x800
+./Allrun 
+cd ..
+
+#------------------------------------------------------------------------------

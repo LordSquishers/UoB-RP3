@@ -1,0 +1,93 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
+}
+
+// TODO- SET FOR 10.5km CRUISE @ Re=6,000,000. Uinf = 222.36.
+
+// Define program
+application rhoPimpleFoam;
+
+// Time controls
+
+startFrom startTime;
+startTime 0;
+
+stopAt endTime;
+endTime 0.25;
+
+deltaT 2e-5;
+
+timeFormat general;
+timePrecision 6;
+runTimeModifiable true;
+
+// Write controls
+
+writeControl adjustable;
+writeInterval 0.01;
+
+writeFormat ascii;
+writeCompression off;
+writePrecision 8;
+purgeWrite 0;
+
+// Processing functions
+
+functions
+{
+    #includeFunc MachNo
+
+    forces1
+    {
+        type forces;
+        libs ("libforces.so");
+
+        writeControl timeStep;
+        timeInterval 1;
+
+        log yes;
+        patches ("wall");
+        origin (0.25 0 0);
+        coordinateRotation
+        {
+            type axesRotation;
+            e3 (0 0 1);
+            e1 (1 0 0);
+        }
+    }
+
+    forceCoeffs1
+    {
+        type forceCoeffs;
+        libs ("libforces.so");
+        patches ("wall");
+
+        // Field Names
+        p p;
+        U U;
+        rho rho;
+
+        // Constant Values
+        pRef 24500;
+        rhoInf 0.389;
+
+        porosity no;
+        writeFields no;
+
+        // Calculation Axes
+        CofR (0.25 0 0);
+        liftDir (0 0 1);
+        dragDir (1 0 0);
+        pitchAxis (0 1 0);
+
+        /* SET BEFORE EACH RUN! CHANGE WITH STARTING PARAMETERS. */
+
+        magUInf 222.36; // MUST BE SET EQUIVALENT TO INIT CONDITIONS
+        lRef 1; // Reference length (m)
+        Aref 0.1; // Reference area (m2)
+    }
+}

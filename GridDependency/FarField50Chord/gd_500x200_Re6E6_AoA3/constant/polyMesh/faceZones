@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v1912                                 |
+|  \\    /   O peration     | Version:  2306                                  |
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -9,44 +9,13 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volScalarField;
-    object      T;
+    arch        "LSB;label=32;scalar=64";
+    class       regIOobject;
+    location    "constant/polyMesh";
+    object      faceZones;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-Tinlet          298;
-
-dimensions      [0 0 0 1 0 0 0];
-
-internalField   uniform $Tinlet;
-
-boundaryField
-{
-    freestream
-    {
-        type            inletOutlet;
-        inletValue      uniform $Tinlet;
-        value           $inletValue;
-    }
-
-    upper
-    {
-        type fixedValue;
-        value uniform 298;
-    }
-
-    lower
-    {
-        type fixedValue;
-        value uniform 298;
-    }
-
-    wall
-    {
-        type            zeroGradient;
-    }
-
-    #includeEtc "caseDicts/setConstraintTypes"
-}
+0()
 
 // ************************************************************************* //

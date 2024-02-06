@@ -1,0 +1,19 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # Tutorial run functions
+
+cd gd_250x100_Re6E6_AoA3
+./Allrun 
+cd ..
+
+cd gd_500x200_Re6E6_AoA3
+./Allrun 
+cd ..
+
+cd gd_1000x400_Re6E6_AoA3
+./Allrun 
+cd ..
+
+echo DONE!
+
+#------------------------------------------------------------------------------
