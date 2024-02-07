@@ -1,14 +1,10 @@
 #!/bin/sh
-cd "${0%/*}" || exit                                # Run from this directory
-. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
-#------------------------------------------------------------------------------
-
-runApplication blockMesh
-runApplication transformPoints -scale "(1 0 1)"
-runApplication extrudeMesh
+blockMesh
+transformPoints -scale "(1 0 1)"
+extrudeMesh
 
 decomposePar
-mpirun -np 8 rhoPimpleFoam -parallel
+mpirun -np 8 --allow-run-as-root rhoPimpleFoam -parallel
 reconstructPar
 
 rhoPimpleFoam -postProcess -func yPlus > yPlus.log
